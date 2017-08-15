@@ -133,21 +133,21 @@ GnomeTerminalCommand.prototype = {
             }
 
             if (this.child.Profile && this.child.Profile.length > 0) {
-                this.command += ' --window-with-profile=' + (this.child.Profile).quote();
+                this.command += ' --window-with-profile=' + (this.child.Profile).quote;
             }
 
-            this.command += ' --title=' + (this.child.Name).quote();
-            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote()).quote();
+            this.command += ' --title=' + (this.child.Name).quote;
+            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote).quote;
 
-            this.command = 'sh -c ' + this.command.quote();
+            this.command = 'sh -c ' + this.command.quote;
 
         }
 
         if (this.child.Type == '__app__') {
 
             if (this.child.Protocol == 'True') {
-                this.command += this.cmdTerm + ' --title=' + (this.child.Name).quote() + ' -e ';
-                this.command += (this.child.Host).quote();
+                this.command += this.cmdTerm + ' --title=' + (this.child.Name).quote + ' -e ';
+                this.command += (this.child.Host).quote;
             } else {
                 this.command += this.child.Host;
             }
@@ -164,22 +164,22 @@ GnomeTerminalCommand.prototype = {
             this.command += ' ';
 
             if (this.child.Profile && this.child.Profile.length > 0) {
-                this.command += ' --tab-with-profile=' + (this.child.Profile).quote();
+                this.command += ' --tab-with-profile=' + (this.child.Profile).quote;
             }
             else 
             {
                 this.command = ' --tab ';
             }
 
-            this.command += ' --title=' + (this.child.Name).quote();
-            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote()).quote();
+            this.command += ' --title=' + (this.child.Name).quote;
+            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote).quote;
         }
 
         if (this.child.Type == '__app__') {
 
             // Ignore "execute in a shell" when open all as tabs
-            this.command += ' --tab --title=' + (this.child.Name).quote() + ' -e ';
-            this.command += (this.child.Host).quote();
+            this.command += ' --tab --title=' + (this.child.Name).quote + ' -e ';
+            this.command += (this.child.Host).quote;
         }
 
         return [this.command, this.sshparams];
@@ -209,21 +209,21 @@ TerminatorCommand.prototype = {
             }
 
             if (this.child.Profile && this.child.Profile.length > 0) {
-                this.command += ' --profile=' + (this.child.Profile).quote();
+                this.command += ' --profile=' + (this.child.Profile).quote;
             }
 
-            this.command += ' --title=' + (this.child.Name).quote();
-            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote()).quote();
+            this.command += ' --title=' + (this.child.Name).quote;
+            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote).quote;
 
-            this.command = 'sh -c ' + this.command.quote();
+            this.command = 'sh -c ' + this.command.quote;
 
         }
 
         if (this.child.Type == '__app__') {
 
             if (this.child.Protocol == 'True') {
-                this.command += this.cmdTerm + ' --title=' + (this.child.Name).quote() + ' -e ';
-                this.command += (this.child.Host).quote();
+                this.command += this.cmdTerm + ' --title=' + (this.child.Name).quote + ' -e ';
+                this.command += (this.child.Host).quote;
             } else {
                 this.command += this.child.Host;
             }
@@ -250,17 +250,17 @@ GuakeCommand.prototype = {
 
             this.command += this.cmdTerm;
 
-            this.command += ' --new-tab=' + (this.child.Name).quote();
-            this.command += ' --rename-tab=' + (this.child.Name).quote();
-            this.command += ' -e ' + (this.sshparams +" sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote()).quote();
+            this.command += ' --new-tab=' + (this.child.Name).quote;
+            this.command += ' --rename-tab=' + (this.child.Name).quote;
+            this.command += ' -e ' + (this.sshparams +" sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote).quote;
 
         }
 
         if (this.child.Type == '__app__') {
 
             if (this.child.Protocol == 'True') {
-                this.command += this.cmdTerm + '  --rename-tab=' + (this.child.Name).quote()  + ' --new-tab=' + (this.child.Name).quote() + ' -e ';
-                this.command += (this.child.Host).quote();
+                this.command += this.cmdTerm + '  --rename-tab=' + (this.child.Name).quote  + ' --new-tab=' + (this.child.Name).quote + ' -e ';
+                this.command += (this.child.Host).quote;
             } else {
                 this.command += this.child.Host;
             }
@@ -287,15 +287,15 @@ TMuxCommand.prototype = {
             this._setParams();
 
             this.command += this.cmdTerm;
-            this.command += ' new-window -n ' + (this.child.Name).quote();
-            this.command += ' ' + (this.sshparams + this.child.Protocol + " " + this.sshparams_noenv).quote();
+            this.command += ' new-window -n ' + (this.child.Name).quote;
+            this.command += ' ' + (this.sshparams + this.child.Protocol + " " + this.sshparams_noenv).quote;
         }
 
         if (this.child.Type == '__app__') {
 
             if (this.child.Protocol == 'True') {
-                this.command += this.cmdTerm + ' new-window -n ' + (this.child.Name).quote();
-                this.command += ' ' + (this.child.Host).quote();
+                this.command += this.cmdTerm + ' new-window -n ' + (this.child.Name).quote;
+                this.command += ' ' + (this.child.Host).quote;
             } else {
                 this.command += this.child.Host;
             }
@@ -328,18 +328,18 @@ URXVTCommand.prototype = {
                 this.command = this.sshparams + ' ' + this.command;
             }
 
-            this.command += ' -title ' + (this.child.Name).quote();
-            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote());
+            this.command += ' -title ' + (this.child.Name).quote;
+            this.command += ' -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote);
 
-            this.command = 'sh -c ' + this.command.quote();
+            this.command = 'sh -c ' + this.command.quote;
 
         }
 
         if (this.child.Type == '__app__') {
 
             if (this.child.Protocol == 'True') {
-                this.command += this.cmdTerm + ' -title ' + (this.child.Name).quote() + ' -e ';
-                this.command += (this.child.Host).quote();
+                this.command += this.cmdTerm + ' -title ' + (this.child.Name).quote + ' -e ';
+                this.command += (this.child.Host).quote;
             } else {
                 this.command += this.child.Host;
             }
@@ -385,18 +385,18 @@ LilyTermCommand.prototype = {
                 this.command = this.sshparams + ' ' + this.command;
             }
 
-            this.command += ' --title ' + (this.child.Name).quote();
-            this.command += ' -s -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote());
+            this.command += ' --title ' + (this.child.Name).quote;
+            this.command += ' -s -e ' + ("sh -c " + (this.child.Protocol + " " + this.sshparams_noenv).quote);
 
-            this.command = 'sh -c ' + this.command.quote();
+            this.command = 'sh -c ' + this.command.quote;
 
         }
 
         if (this.child.Type == '__app__') {
 
             if (this.child.Protocol == 'True') {
-                this.command += this.cmdTerm + ' --title ' + (this.child.Name).quote() + ' -s -e ';
-                this.command += (this.child.Host).quote();
+                this.command += this.cmdTerm + ' --title ' + (this.child.Name).quote + ' -s -e ';
+                this.command += (this.child.Host).quote;
             } else {
                 this.command += this.child.Host;
             }
